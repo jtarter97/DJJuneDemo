@@ -154,3 +154,71 @@
             /* Additional styles for paragraphs if desired */
         }
     </style>
+    
+    
+<script type="text/javascript">
+
+// JavaScript for mobile view
+const hamburger = document.querySelector('.hamburger');
+const navList = document.querySelector('nav ul');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navList.classList.toggle('show');
+});
+</script>
+<style>
+    @media screen and (max-width: 600px) {
+        
+        nav ul {
+            display: none;
+          }
+      
+          /* Display the hamburger icon */
+          nav .hamburger {
+            display: flex;
+            justify-content: center; /* Center the icon horizontally */
+            align-items: center; /* Center the icon vertically */
+            cursor: pointer;
+          }
+      
+          /* Styling for the hamburger icon */
+          nav .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #000;
+            margin-bottom: 5px;
+          }
+      
+          /* Styling for the active state of the hamburger icon */
+          nav .hamburger.active span {
+            background-color: #000;
+          }
+      
+          nav .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(0, 5px);
+          }
+      
+          nav .hamburger.active span:nth-child(2) {
+            opacity: 0;
+          }
+      
+          nav .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(0, -5px);
+          }
+      
+          /* Show the navigation list when the hamburger icon is clicked */
+          nav ul.show {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center the navigation list horizontally */
+          }
+      
+          nav ul.show li {
+            margin-bottom: 10px;
+          }
+    }
+
+</style>
+    
